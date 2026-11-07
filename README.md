@@ -1,6 +1,5 @@
 # xveco
 
-<<<<<<< HEAD
 Librería avanzada de economía, bancos, mercados e inventarios en Python, con soporte de peso, volumen, durabilidad, podrición y contenedores.
 
 **Versión:** 2.1.5
@@ -117,7 +116,7 @@ Este proyecto está licenciado bajo la GNU Affero General Public License v3 o po
 
 ## Enlaces
 
-- Repositorio: [https://github.com/Siaro01/xveco](https://github.com/Siaro01/xveco)
+- Repositorio: [https://github.com/Mel-Rose/xveco](https://github.com/Mel-Roses/xveco)
 =======
 Librería de economía simulada para Python.
 
@@ -143,7 +142,7 @@ xveco permite crear monedas, cuentas bancarias, sistemas de inflación, bancos y
 ## 📦 Instalación
 
 ```bash
-pip install xveco
+pip install xveconomy
 ```
 
 ---

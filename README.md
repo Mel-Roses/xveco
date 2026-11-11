@@ -7,8 +7,9 @@ Librería avanzada de economía, bancos, mercados e inventarios en Python, con s
 **Python:** >=3.8  
 
 ## Instalación
-
+```Bash
 pip install xveconomy
+```
 
 ## Características
 
@@ -23,7 +24,7 @@ pip install xveconomy
 ## Uso básico
 
 ### Moneda y cuenta
-
+```Python
 from xveco import Currency, Account
 
 euro = Currency("Euro", "€", 1.0, logo="💶")
@@ -31,9 +32,10 @@ cuenta = Account("Jugador1", euro)
 
 cuenta.deposit(100)
 cuenta.show_balance()
+```
 
 ### Banco
-
+```Python
 from xveco import Bank
 
 banco = Bank(euro, supply=10000)
@@ -42,9 +44,10 @@ banco.loan(cuenta, 500, interest=5)
 print(banco.calculate_debt(cuenta))
 
 banco.pay_debt(cuenta)
+```
 
 ### Ítems e inventario
-
+```Python
 from xveco import Item, ItemInstance
 
 manzana = Item("manzana", "Manzana", base_price=2, weight=0.2, volume=0.1, rots=True, decay_time=60)
@@ -52,16 +55,18 @@ instancia = ItemInstance(manzana)
 
 cuenta.add_item_instance(instancia)
 print(instancia.get_current_decay())
+```
 
 ### Contenedores
-
+```Python
 from xveco import Container
 
 mochila = Container("mochila1", "Mochila básica", max_container_slots=10, max_weight=20)
 mochila.add_item(instancia)
+```
 
 ### Mercado
-
+```Python
 from xveco import Market
 
 mercado = Market(euro)
@@ -69,9 +74,10 @@ mercado.register_item(manzana)
 
 mercado.buy(cuenta, "manzana", qty=3)
 mercado.sell(cuenta, "manzana", qty=1)
+```
 
 ### Intercambios (Trade)
-
+```Python
 from xveco import Trade
 
 cuenta2 = Account("Jugador2", euro)
@@ -82,7 +88,7 @@ trade.add_offer(cuenta2, items=[instancia], money=0)
 
 trade.accept(cuenta)
 trade.accept(cuenta2)
-
+```
 ## Clases principales
 
 | Clase | Descripción |
@@ -119,16 +125,10 @@ xveco permite crear monedas, cuentas bancarias, sistemas de inflación, bancos y
 
 ---
 
-## 📦 Instalación
-
-pip install xveconomy
-
----
-
 ## 🚀 Ejemplo completo
 
 import xveco
-
+```
 # Crear moneda
 coin = xveco.Currency(
     "XCoin",
@@ -156,14 +156,16 @@ pepe.show_balance()
 coin.apply_inflation(10)
 
 print("Saldo de Santi en euros:", santi.balance_in_eur())
+```
 
 Salida aproximada:
 
+```
 🪙 Santi: 75,00 X
 🪙 Pepe: 75,00 X
 
 Saldo de Santi en euros: 41.25
-
+```
 ---
 
 # 📚 Documentación
@@ -173,13 +175,14 @@ Saldo de Santi en euros: 41.25
 Representa una moneda.
 
 ### Crear una moneda
-
+```
 coin = xveco.Currency(
     "XCoin",
     "X",
     0.5,
     "🪙"
 )
+```
 
 ### Parámetros
 
